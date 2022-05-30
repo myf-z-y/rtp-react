@@ -11,7 +11,7 @@ export default function Footer(props) {
                     </path>
                 </svg>
             </a>
-            <p>written by myf-z-y, 2022.</p>
+            <p>written by zjmyf, 2022.</p>
         </div>
     </footer>);
 }

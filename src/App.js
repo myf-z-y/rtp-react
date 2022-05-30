@@ -7,29 +7,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="logo">
+        <div className="title">
           Machine-learning-assisted high-throughput screening for organic
           room-temperature phosphorescent molecules
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Blog</a>
-            </li>
-            <li>
-              <a href="">About us</a>
-            </li>
-            <li>
-              <a href="">Our history</a>
-            </li>
-            <li>
-              <a href="">Contacts</a>
-            </li>
-          </ul>
-        </nav>
       </header>
       <main className="grid">
         <article>
