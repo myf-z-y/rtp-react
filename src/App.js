@@ -33,14 +33,7 @@ function App() {
             </p>
           </div>
 
-          <h3>Table of Contents</h3>
-          <ul>
-            <li><a href="#req">Requirements</a></li>
-            <li><a href="#pdf">PDFs</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+          
           <h2 id="req">Requirements</h2>
           <h2 id="pdf">PDFs</h2>
           <p>
