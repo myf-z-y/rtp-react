@@ -1,5 +1,6 @@
 import figImg from './figshare.png';
 import Footer from './components/Footer';
+import SmiPred from './components/SmiPred';
 import long_res from './pdfs/read_screen_result_long.pdf';
 import middle_res from './pdfs/read_screen_result_middle.pdf'
 
@@ -14,6 +15,8 @@ function App() {
       </header>
       <main className="grid">
         <article>
+          <h1>Prediction</h1>
+          <SmiPred/>
           <h1>Introduction</h1>
           <p>
             This project is created for high-throughput screening of promising
