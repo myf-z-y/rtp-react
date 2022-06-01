@@ -98,6 +98,7 @@ nav a {
   border-radius: 5px;
 }
 
+
 svg {
   fill: #fff;
   vertical-align: bottom;
@@ -141,4 +142,18 @@ svg {
 
 .status {
   margin-left: 10px;
+}
+
+.smiVis {
+  width: 200px;
+}
+
+.pred-result div {
+  overflow: auto;
+  width: 700px;
+  font-weight: bold;
+}
+
+.pred-result img {
+  width: 200px;
 }
