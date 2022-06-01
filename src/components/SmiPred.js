@@ -15,8 +15,12 @@ export default function SmiPred(props) {
     try {
       // after this line, our function will wait for the `fetch()` call to be settled
       // the `fetch()` call will either return a Response or throw an error
-
-      const response = await fetch("/predict?smi=" + newName);
+      //const response = await fetch('/predict?smi=${newName}`);
+      const response = await fetch("/predict", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ smi: newName }),
+      });
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
@@ -24,7 +28,7 @@ export default function SmiPred(props) {
       // the `response.json()` call will either return the JSON object or throw an error
       const json = await response.json();
       setRes(json["res"]);
-      if (json["prob"] == -1) {
+      if (json["prob"] === -1) {
         setProb("");
       } else {
         setProb(json["prob"]);
