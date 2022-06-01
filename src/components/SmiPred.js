@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import Button from '@mui/material/Button';
+import StatusInfo from "./StatusInfo";
 
 export default function SmiPred(props) {
   const [newName, setNewName] = useState("");
@@ -22,7 +23,7 @@ export default function SmiPred(props) {
       // after this line, our function will wait for the `fetch()` call to be settled
       // the `fetch()` call will either return a Response or throw an error
       //const response = await fetch('/predict?smi=${newName}`);
-      setStat("computing...");
+      setStat("loading");
       const responsePred = await fetch("/predict", {
         method: "post",
         headers: { "Content-Type": "application/json" },
@@ -55,7 +56,7 @@ export default function SmiPred(props) {
       } else {
         setProb(json["prob"]);
       }
-      setStat("done!");
+      setStat("done");
       setInputSmi(newName);
       //console.log(json);
 
@@ -82,8 +83,10 @@ export default function SmiPred(props) {
         <Button variant="contained" type="submit" size="small">Predict</Button>
       </div>
       <div className="pred-result">
-      <p>status: </p>
-        <div className="status">{stat}</div>
+      <p>status: </p> 
+<div className="status">
+      <StatusInfo stat={stat}></StatusInfo>
+        </div>
         <p>input: </p>
         <div className="inputSmi">{inputSmi}</div>
         <p>result: </p>

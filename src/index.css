@@ -3,7 +3,7 @@ body {
   color: #333;
   margin: 0;
   font: 1.2em / 1.2;
-  font-family: 'Roboto',-apple-system, BlinkMacSystemFont, 'Segoe UI',  'Oxygen',
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +23,7 @@ img {
   max-width: 100%;
   display: block;
 }
+
 article {
   overflow: auto;
 }
@@ -133,7 +134,7 @@ svg {
   }
 }
 
-.form-example > button {
+.form-example>button {
   margin-left: 10px;
   background: rgba(12, 84, 1, 0.466);
   color: #fff;
@@ -154,4 +155,8 @@ svg {
 
 .pred-result img {
   width: 200px;
+}
+
+.statIcon {
+  color: rgba(12, 84, 1, 0.466)
 }
