@@ -131,3 +131,10 @@ svg {
     display: block;
   }
 }
+
+.form-example > button {
+  margin-left: 10px;
+  background: rgba(12, 84, 1, 0.466);
+  color: #fff;
+  border-radius: 5px;
+}

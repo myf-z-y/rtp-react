@@ -36,8 +36,6 @@ function App() {
             </p>
           </div>
 
-          
-          <h2 id="req">Requirements</h2>
           <h2 id="pdf">PDFs</h2>
           <p>
             <a href={long_res}>See long class result (PDF, 5.93 MB)</a>
