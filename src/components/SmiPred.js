@@ -79,9 +79,10 @@ export default function SmiPred(props) {
           required
         />
         <button type="submit">predict</button>
-        <span className="status">Status: {stat}</span>
       </div>
       <div className="pred-result">
+      <p>status: </p>
+        <div className="status">{stat}</div>
         <p>input: </p>
         <div className="inputSmi">{inputSmi}</div>
         <p>result: </p>

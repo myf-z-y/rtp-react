@@ -16,7 +16,10 @@ function App() {
       <main className="grid">
         <article>
           <h1>Prediction</h1>
-          <SmiPred/>
+          <div className='divForm'>
+            <SmiPred/>
+          </div>
+          
           <h1>Introduction</h1>
           <p>
             This project is created for high-throughput screening of promising
