@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import Button from '@mui/material/Button';
 
 export default function SmiPred(props) {
   const [newName, setNewName] = useState("");
@@ -78,7 +79,7 @@ export default function SmiPred(props) {
           id="smi"
           required
         />
-        <button type="submit">predict</button>
+        <Button variant="contained" type="submit" size="small">Predict</Button>
       </div>
       <div className="pred-result">
       <p>status: </p>

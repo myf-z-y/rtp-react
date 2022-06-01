@@ -3,7 +3,7 @@ body {
   color: #333;
   margin: 0;
   font: 1.2em / 1.2;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto',-apple-system, BlinkMacSystemFont, 'Segoe UI',  'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +16,7 @@ code {
 }
 
 p {
-  line-height: 1.7rem;
+  line-height: 1.5rem;
 }
 
 img {
@@ -44,7 +44,6 @@ article {
 
 .end {
   display: flex;
-  padding: .5em;
   margin-top: 50px;
   text-align: center;
   background-color: #000;
@@ -55,7 +54,6 @@ article {
 }
 
 .end p {
-  font-size: 15px;
   line-height: 15px;
 }
 
@@ -87,7 +85,7 @@ nav a {
 }
 
 .fig {
-  width: 70px;
+  width: 60px;
   display: inline;
   margin-left: 5px;
   margin-right: 5px;
@@ -103,7 +101,6 @@ nav a {
 
 
 svg {
-  fill: #fff;
   vertical-align: bottom;
   padding: 12px;
   height: 20px;
