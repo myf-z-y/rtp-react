@@ -4,6 +4,7 @@ export default function SmiPred(props) {
   const [newName, setNewName] = useState("");
   const [res, setRes] = useState("");
   const [prob, setProb] = useState("");
+  const [stat, setStat] = useState("");
 
   function handleChange(e) {
     setNewName(e.target.value);
@@ -26,14 +27,16 @@ export default function SmiPred(props) {
       }
       // after this line, our function will wait for the `response.json()` call to be settled
       // the `response.json()` call will either return the JSON object or throw an error
+      setStat("computing...");
       const json = await response.json();
+      
       setRes(json["res"]);
       if (json["prob"] === -1) {
         setProb("");
       } else {
         setProb(json["prob"]);
       }
-
+      setStat("done!")
       //console.log(json);
     } catch (error) {
       console.error(`Could not get products: ${error}`);
@@ -53,6 +56,7 @@ export default function SmiPred(props) {
           required
         />
         <button type="submit">predict</button>
+        <span className="status">Status: {stat}</span>
       </div>
       <div className="pred-result">
         <p>result: {res}</p>
