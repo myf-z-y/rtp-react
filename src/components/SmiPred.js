@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import StatusInfo from "./StatusInfo";
 
 export default function SmiPred(props) {
@@ -30,17 +30,6 @@ export default function SmiPred(props) {
         body: JSON.stringify({ smi: newName }),
       });
 
-      const responseImg = await fetch("/smiVis", {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ smi: newName, randId: genNano }),
-      });
-
-      const responseClean = await fetch("/cleanImg", {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ smi: newName, randId: genNano }),
-      });
       /*
       if (!(responsePred.ok && responseImg.ok && responseClean.ok)) {
         throw new Error(`HTTP error: ${responsePred.status}`);
@@ -53,16 +42,30 @@ export default function SmiPred(props) {
       setRes(json["res"]);
       if (json["prob"] === -1) {
         setProb("");
+        setImgSrc("")
       } else {
+        
+        const responseImg = await fetch("/smiVis", {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ smi: newName, randId: genNano }),
+        });
+
+        const responseClean = await fetch("/cleanImg", {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ smi: newName, randId: genNano }),
+        });
+        const blob = await responseImg.blob();
+        const objectURL = URL.createObjectURL(blob);
         setProb(json["prob"]);
+        setImgSrc(objectURL);
       }
-      setStat("done");
+
       setInputSmi(newName);
       //console.log(json);
 
-      const blob = await responseImg.blob();
-      const objectURL = URL.createObjectURL(blob);
-      setImgSrc(objectURL);
+      setStat("done");
     } catch (error) {
       console.error(`Could not get products: ${error}`);
     }
@@ -80,12 +83,14 @@ export default function SmiPred(props) {
           id="smi"
           required
         />
-        <Button variant="contained" type="submit" size="small">Predict</Button>
+        <Button variant="contained" type="submit" size="small">
+          Predict
+        </Button>
       </div>
       <div className="pred-result">
-      <p>status: </p> 
-<div className="status">
-      <StatusInfo stat={stat}></StatusInfo>
+        <p>status: </p>
+        <div className="status">
+          <StatusInfo stat={stat}></StatusInfo>
         </div>
         <p>input: </p>
         <div className="inputSmi">{inputSmi}</div>
